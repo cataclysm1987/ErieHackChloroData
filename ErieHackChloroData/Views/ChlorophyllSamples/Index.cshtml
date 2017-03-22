@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ErieHackChloroData.Models.ChlorophyllSample>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Lake)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Site)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeEntered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parameter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Result)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lake)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Site)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeEntered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parameter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EntryCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Result)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Unit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SampleId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SampleId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SampleId })
+        </td>
+    </tr>
+}
+
+</table>
